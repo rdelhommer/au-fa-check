@@ -1,8 +1,8 @@
-import { bindable, autoinject, customElement, computedFrom } from "aurelia-framework";
-import { globalConfig, FaCheckSize, FaCheckShape, FaCheckIconType } from "./fa-check-config";
-import { ThemeController, themeController } from "../utils/theme-controller";
+import { bindable, customElement, computedFrom } from "aurelia-framework";
+import { globalConfig, FaCheckSize, FaCheckShape, FaCheckIconType, FaCheckOrientation } from "./fa-check-config";
+import { themeController } from "../utils/theme-controller";
 
-// TODO: aria attributes
+// TODO: aria attributes - what is needed for this? maybe labeled by?
 // TODO: outline iconType focus styles - maybe a gradient background that fades to transparent from the middle?
 // TODO: material styles - can i do a dynamic require and separate stylesheets for each theme?
 // TODO: fontawesome 5 classes
@@ -18,7 +18,7 @@ export class FaCheck {
   @bindable checked: boolean
   @bindable disabled: boolean
   @bindable icon: string
-  @bindable orientation: 'horizontal' | 'vertical'
+  @bindable orientation: FaCheckOrientation
   @bindable checkedColor: string
   @bindable size: FaCheckSize
   @bindable shape: FaCheckShape
@@ -94,7 +94,7 @@ export class FaCheck {
     this.checkedColor = this.checkedColor || globalConfig.checkedColor
     this.size = this.size || globalConfig.size
     this.shape = this.shape || globalConfig.shape
-    this.iconType = this.iconType || globalConfig.iconType
+    this.iconType = this.iconType || 'standard'
 
     if (this.iconType === 'outline' && !this.icon) {
       throw 'You must specify an icon when using outline checkboxes'
