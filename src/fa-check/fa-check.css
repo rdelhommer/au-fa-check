@@ -23,6 +23,11 @@ au-fa-check>.fa-check-wrap>.fa.checked {
   background: black;
 }
 
+au-fa-check>.fa-check-wrap>.fa.unchecked {
+  color: transparent;
+  background: transparent;
+}
+
 au-fa-check>.fa-check-wrap>.fa.standard {
   font-size: 70%;
 }
@@ -52,8 +57,8 @@ au-fa-check>.fa-check-wrap-horizontal>.fa {
   margin-right: 0.25em;
 }
 
-au-fa-check>.fa-check-wrap:hover:not(.disabled)>.fa {
-  text-shadow: 0px 0.5px 0.5px grey;
+au-fa-check>.fa-check-wrap:hover>.fa:not(.disabled):not(.checked) {
+  color: lightgray;
 }
 
 au-fa-check>.fa-check-wrap.disabled {

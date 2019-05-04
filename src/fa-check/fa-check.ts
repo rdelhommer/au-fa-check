@@ -2,7 +2,6 @@ import { bindable, autoinject, customElement, observable, computedFrom } from "a
 import { globalConfig, FaCheckSize, FaCheckShape } from "./fa-check-config";
 
 // TODO: disabled styles
-// TODO: unchecked styles
 // TODO: react styles
 // TODO: fontawesome 5 classes
 // TODO: support aurelia-fontawesome
