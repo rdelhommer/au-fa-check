@@ -62,8 +62,17 @@ au-fa-check>.fa-check-wrap:hover>.fa:not(.disabled):not(.checked) {
 }
 
 au-fa-check>.fa-check-wrap.disabled {
-  opacity: 0.5;
   cursor: not-allowed!important;
+}
+
+au-fa-check>.fa-check-wrap>.fa.disabled.checked {
+  /* TODO: Can I set a separate opacity for the border so that the outline is still visible? */
+  opacity: 0.2;
+}
+
+au-fa-check>.fa-check-wrap>.fa.disabled.unchecked {
+  opacity: 0.2;
+  color: black;
 }
 
 au-fa-check>.fa-check-wrap.disabled:hover {
