@@ -1,0 +1,14 @@
+<template>
+  <require from="./fa-check.css"></require>
+
+  <label class="fa-check-wrap fa-check-wrap-${orientation}" click.delegate="toggleChecked($event)"
+         class.bind="(disabled ? 'disabled' : '') + ' ' + (checked ? 'text-' + type : '')"
+         style.bind="'color: ' + selectedColor">
+    <span class="fa-stack">
+      <i class="fa fa-stack-2x" class.bind="checked ? 'fa-circle' : 'fa-circle-thin'"></i>
+      <i class="fa ${checkIcon} fa-stack-1x" class.bind="checked ? 'fa-inverse' : 'text-muted'"></i>
+      <input class="input-fa-checkbox" type="checkbox" checked.bind="checked" disabled.bind="disabled">
+    </span>
+    <slot><!-- label --></slot>
+  </label>
+</template>
