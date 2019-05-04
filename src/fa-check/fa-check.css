@@ -9,8 +9,12 @@ au-fa-check>.fa-check-wrap {
   align-items: center;
 }
 
-au-fa-check>.fa-check-wrap>.fa:not(.outline-check) {
+au-fa-check>.fa-check-wrap>.fa.unchecked:not(.outline-check) {
   border: solid black;
+}
+
+au-fa-check>.fa-check-wrap>.fa.checked:not(.outline-check) {
+  border: solid var(--au-fa-check--checkedColor);
 }
 
 au-fa-check>.fa-check-wrap>.fa {
@@ -23,7 +27,7 @@ au-fa-check>.fa-check-wrap>.fa.focused:not(.outline-check) {
 
 au-fa-check>.fa-check-wrap>.fa.checked:not(.outline-check) {
   color: #FFFFFF;
-  background: black;
+  background: var(--au-fa-check--checkedColor);
 }
 
 au-fa-check>.fa-check-wrap>.fa.unchecked:not(.outline-check) {
@@ -32,7 +36,7 @@ au-fa-check>.fa-check-wrap>.fa.unchecked:not(.outline-check) {
 }
 
 au-fa-check>.fa-check-wrap>.fa.checked.outline-check {
-  color: black;
+  color: var(--au-fa-check--checkedColor);
 }
 
 au-fa-check>.fa-check-wrap>.fa.standard:not(.outline-check) {
@@ -78,7 +82,7 @@ au-fa-check>.fa-check-wrap.disabled {
 
 au-fa-check>.fa-check-wrap>.fa.disabled.checked {
   /* TODO: Can I set a separate opacity for the border so that the outline is still visible? */
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 au-fa-check>.fa-check-wrap>.fa.disabled.unchecked {

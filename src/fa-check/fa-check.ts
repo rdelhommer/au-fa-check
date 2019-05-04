@@ -1,14 +1,13 @@
 import { bindable, autoinject, customElement, computedFrom } from "aurelia-framework";
 import { globalConfig, FaCheckSize, FaCheckShape, FaCheckIconType } from "./fa-check-config";
+import { ThemeController, themeController } from "../utils/theme-controller";
 
 // TODO: aria attributes
-// TODO: outline iconType focus styles
-// TODO: configurable colors
+// TODO: outline iconType focus styles - maybe a gradient background that fades to transparent from the middle?
 // TODO: material styles - can i do a dynamic require and separate stylesheets for each theme?
 // TODO: fontawesome 5 classes
 // TODO: support aurelia-fontawesome
 
-@autoinject
 @customElement('au-fa-check')
 export class FaCheck {
   private outlineIcon: string
@@ -20,7 +19,7 @@ export class FaCheck {
   @bindable disabled: boolean
   @bindable icon: string
   @bindable orientation: 'horizontal' | 'vertical'
-  @bindable selectedColor: string
+  @bindable checkedColor: string
   @bindable size: FaCheckSize
   @bindable shape: FaCheckShape
   @bindable iconType: FaCheckIconType
@@ -86,9 +85,13 @@ export class FaCheck {
     this.configureIcon()
   }
 
+  checkedColorChanged() {
+    themeController.configureTheme()
+  }
+
   bind() {
     this.orientation = this.orientation || 'horizontal'
-    this.selectedColor = this.selectedColor || globalConfig.selectedColor
+    this.checkedColor = this.checkedColor || globalConfig.checkedColor
     this.size = this.size || globalConfig.size
     this.shape = this.shape || globalConfig.shape
     this.iconType = this.iconType || globalConfig.iconType

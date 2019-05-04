@@ -9,7 +9,6 @@
     ],
     "rootDir": "src",
     "outDir": "dist/test",
-    "noImplicitAny": true,
     "noImplicitReturns": true,
     "strictNullChecks": true,
     "declaration": true,

@@ -5,7 +5,7 @@ export declare type FaCheckIconType = 'standard' | 'outline'
 
 export interface IFaCheckConfig {
   faVersion: 4 | 5,
-  selectedColor: string
+  checkedColor: string
   theme: FaCheckTheme
   size: FaCheckSize
   shape: FaCheckShape
@@ -14,9 +14,13 @@ export interface IFaCheckConfig {
 
 export let globalConfig: IFaCheckConfig = {
   faVersion: 4,
-  selectedColor: 'black',
+  checkedColor: 'black',
   theme: 'standard',
   size: 'standard',
   shape: 'square',
   iconType: 'standard'
 }
+
+export let themeConfigKeys: (keyof IFaCheckConfig)[] = [
+  'checkedColor'
+]
