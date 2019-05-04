@@ -13,6 +13,11 @@ au-fa-check>.fa-check-wrap.focused {
   /* TODO */
 }
 
+
+au-fa-check>.fa-check-wrap>.fa-stack.standard {
+  font-size: 70%;
+}
+
 au-fa-check .input-fa-checkbox {
   opacity: 0;
 }
@@ -26,7 +31,7 @@ au-fa-check>.fa-check-wrap-horizontal {
 }
 
 au-fa-check>.fa-check-wrap-horizontal>.fa-stack {
-  margin-right: 0.5rem;
+  margin-right: 0.25em;
 }
 
 au-fa-check>.fa-check-wrap:hover:not(.disabled)>.fa-stack {

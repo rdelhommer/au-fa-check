@@ -1,9 +1,8 @@
 import { bindable, autoinject, customElement, observable, computedFrom } from "aurelia-framework";
-import { globalConfig } from "./fa-check-config";
+import { globalConfig, FaCheckSize } from "./fa-check-config";
 
 // TODO: keyboard control and focus/active styles
 // TODO: react styles
-// TODO: checkbox size in config (just normal and large for now
 // TODO: square vs circle container in config
 // TODO: fontawesome 5 classes
 // TODO: support aurelia-fontawesome
@@ -16,6 +15,7 @@ export class FaCheck {
   @bindable checkIcon: string
   @bindable orientation: 'horizontal' | 'vertical'
   @bindable selectedColor: string
+  @bindable size: FaCheckSize
 
   isInputFocused: boolean
 
@@ -25,6 +25,13 @@ export class FaCheck {
       this.disabled ? 'disabled' : undefined,
       // this.checked ? 'disabled' : undefined,
       this.isInputFocused ? 'focused' : undefined,
+    ].filter(x => !!x).join(' ')
+  }
+
+  @computedFrom('size')
+  get faStackClasses() {
+    return [
+      this.size
     ].filter(x => !!x).join(' ')
   }
 
@@ -39,5 +46,6 @@ export class FaCheck {
     this.checkIcon = this.checkIcon || 'fa-check'
     this.orientation = this.orientation || 'horizontal'
     this.selectedColor = this.selectedColor || globalConfig.selectedColor
+    this.size = this.size || globalConfig.size
   }
 }
