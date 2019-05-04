@@ -1,7 +1,8 @@
 import { bindable, autoinject, customElement, observable, computedFrom } from "aurelia-framework";
 import { globalConfig, FaCheckSize, FaCheckShape } from "./fa-check-config";
 
-// TODO: keyboard control and focus/active styles
+// TODO: disabled styles
+// TODO: unchecked styles
 // TODO: react styles
 // TODO: fontawesome 5 classes
 // TODO: support aurelia-fontawesome
@@ -19,20 +20,20 @@ export class FaCheck {
 
   isInputFocused: boolean
 
-  @computedFrom('disabled', 'checked', 'isInputFocused')
+  @computedFrom('disabled')
   get labelClasses() {
     return [
       this.disabled ? 'disabled' : undefined,
       // this.checked ? 'disabled' : undefined,
-      this.isInputFocused ? 'focused' : undefined,
     ].filter(x => !!x).join(' ')
   }
 
-  @computedFrom('size', 'checked')
+  @computedFrom('size', 'checked', 'isInputFocused')
   get iconClasses() {
     return [
       this.size,
       this.checked ? 'checked' : 'unchecked',
+      this.isInputFocused ? 'focused' : undefined,
       this.shape === 'square' 
         ? 'square-check' 
         : this.shape === 'circle'
