@@ -1,10 +1,12 @@
 # au-fa-check - WORK IN PROGRESS
 A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons
 
+This library is a work in progress and has not been published to npm.  Please check back again soon!
+
 ## Compatibility
 At this time, this libary is only compatible with FontAwesome 4.x.x
 
-Compatibility with FontAwesome 5.x.x and other libraries is coming soon!
+Compatibility with FontAwesome 5.x.x and other libraries such as aurelia-fontawesome and aurelia/ux is coming soon!
 
 ## Usage and Configuration
 This plugin uses FontAwesome 4.x.x icon classes.  You'll need to ensure that the classes are bundled with your app
