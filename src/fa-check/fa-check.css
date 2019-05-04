@@ -9,27 +9,38 @@ au-fa-check>.fa-check-wrap {
   align-items: center;
 }
 
-au-fa-check>.fa-check-wrap>.fa {
-  padding: 0.25em;
+au-fa-check>.fa-check-wrap>.fa:not(.outline-check) {
   border: solid black;
 }
 
-au-fa-check>.fa-check-wrap>.fa.focused {
+au-fa-check>.fa-check-wrap>.fa {
+  padding: 2px;
+}
+
+au-fa-check>.fa-check-wrap>.fa.focused:not(.outline-check) {
   box-shadow: 0px 0px 2px 2px dodgerblue;
 }
 
-au-fa-check>.fa-check-wrap>.fa.checked {
+au-fa-check>.fa-check-wrap>.fa.checked:not(.outline-check) {
   color: #FFFFFF;
   background: black;
 }
 
-au-fa-check>.fa-check-wrap>.fa.unchecked {
+au-fa-check>.fa-check-wrap>.fa.unchecked:not(.outline-check) {
   color: transparent;
   background: transparent;
 }
 
-au-fa-check>.fa-check-wrap>.fa.standard {
+au-fa-check>.fa-check-wrap>.fa.checked.outline-check {
+  color: black;
+}
+
+au-fa-check>.fa-check-wrap>.fa.standard:not(.outline-check) {
   font-size: 70%;
+}
+
+au-fa-check>.fa-check-wrap>.fa.big.outline-check {
+  font-size: 125%;
 }
 
 au-fa-check>.fa-check-wrap>.fa.square-check {
@@ -57,7 +68,7 @@ au-fa-check>.fa-check-wrap-horizontal>.fa {
   margin-right: 0.25em;
 }
 
-au-fa-check>.fa-check-wrap:hover>.fa:not(.disabled):not(.checked) {
+au-fa-check>.fa-check-wrap:hover>.fa:not(.disabled):not(.checked):not(.outline-check) {
   color: lightgray;
 }
 

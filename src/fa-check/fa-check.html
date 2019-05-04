@@ -3,7 +3,7 @@
 
   <label class="fa-check-wrap fa-check-wrap-${orientation}" click.delegate="toggleChecked($event)"
          class.bind="labelClasses">
-    <i class="fa ${checkIcon}" class.bind="iconClasses"></i>
+    <i class="fa ${renderedIcon}" class.bind="iconClasses"></i>
     <input class="input-fa-checkbox" type="checkbox" checked.bind="checked" disabled.bind="disabled"
             focus.bind="isInputFocused">
     <slot><!-- label --></slot>
