@@ -4,12 +4,9 @@
   <label class="fa-check-wrap fa-check-wrap-${orientation}" click.delegate="toggleChecked($event)"
          class.bind="labelClasses"
          style.bind="'color: ' + selectedColor">
-    <span class="fa-stack" class.bind="faStackClasses">
-      <i class="fa fa-stack-2x" class.bind="checked ? 'fa-circle' : 'fa-circle-thin'"></i>
-      <i class="fa ${checkIcon} fa-stack-1x" class.bind="checked ? 'fa-inverse' : 'text-muted'"></i>
-      <input class="input-fa-checkbox" type="checkbox" checked.bind="checked" disabled.bind="disabled"
-             focus.bind="isInputFocused">
-    </span>
+    <i class="fa ${checkIcon}" class.bind="iconClasses"></i>
+    <input class="input-fa-checkbox" type="checkbox" checked.bind="checked" disabled.bind="disabled"
+            focus.bind="isInputFocused">
     <slot><!-- label --></slot>
   </label>
 </template>
