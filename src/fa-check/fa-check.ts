@@ -3,8 +3,8 @@ import { globalConfig, FaCheckSize, FaCheckShape, FaCheckIconType, FaCheckOrient
 import { themeController } from "../utils/theme-controller";
 
 // TODO: aria attributes - what is needed for this? maybe labeled by?
-// TODO: outline iconType focus styles - maybe a gradient background that fades to transparent from the middle?
-// TODO: material styles - can i do a dynamic require and separate stylesheets for each theme?
+// TODO: outline iconType focus styles - how do other people do this?
+// TODO: material styles - doesnt seem like dynamic require is possible.  see how aurelia/ux does themeing.
 // TODO: fontawesome 5 classes
 // TODO: support aurelia-fontawesome
 
@@ -62,9 +62,10 @@ export class FaCheck {
       : this.outlineIcon
   }
 
-  toggleChecked(event: Event) {
+  onClick(event: Event) {
     if (this.disabled) return;
 
+    this.isInputFocused = true;
     this.checked = !!!this.checked;
     event.stopPropagation()
   }
