@@ -9,6 +9,10 @@ au-fa-check>.fa-check-wrap {
   align-items: center;
 }
 
+au-fa-check>.fa-check-wrap.focused {
+  /* TODO */
+}
+
 au-fa-check .input-fa-checkbox {
   opacity: 0;
 }
