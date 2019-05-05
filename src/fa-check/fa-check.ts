@@ -66,7 +66,6 @@ export class FaCheck {
   onClick(event: Event) {
     if (this.disabled) return;
 
-    this.isInputFocused = true;
     this.checked = !!!this.checked;
     event.stopPropagation()
   }
@@ -88,8 +87,6 @@ export class FaCheck {
   }
 
   checkedColorChanged() {
-    console.log(this.element);
-    console.log(this.instanceConfig);
     themeController.configureTheme(this.element, this.instanceConfig)
   }
 
