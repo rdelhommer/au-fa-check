@@ -1,5 +1,6 @@
 # au-fa-check
 A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons.
+![overview](https://github.com/rdelhommer/au-fa-check/blob/master/docs/images/overview.png)
 
 ## Compatibility
 At this time, this libary is only compatible with FontAwesome 4.x.x and Solid icons in FontAwesome 5.x.x
