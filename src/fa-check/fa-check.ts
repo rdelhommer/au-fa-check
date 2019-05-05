@@ -2,15 +2,17 @@ import { bindable, customElement, computedFrom } from "aurelia-framework";
 import { globalConfig, FaCheckSize, FaCheckShape, FaCheckIconType, FaCheckOrientation } from "./fa-check-config";
 import { themeController } from "../utils/theme-controller";
 
+// TODO: publish to npm
+// TODO: fix issue with focus on click
+// TODO: material styles - doesnt seem like dynamic require is possible.  see how aurelia/ux does themeing.
+// TODO: support aurelia-fontawesome
 // TODO: aria attributes - what is needed for this? maybe labeled by?
 // TODO: outline iconType focus styles - how do other people do this?
-// TODO: material styles - doesnt seem like dynamic require is possible.  see how aurelia/ux does themeing.
-// TODO: fontawesome 5 classes
-// TODO: support aurelia-fontawesome
 
 @customElement('au-fa-check')
 export class FaCheck {
   private outlineIcon: string
+  private faVersion: number
 
   isInputFocused: boolean
   renderedIcon: string
@@ -43,7 +45,8 @@ export class FaCheck {
         : this.shape === 'circle'
           ? 'circle-check'
           : undefined,
-      this.iconType === 'outline' ? 'outline-check' : undefined
+      this.iconType === 'outline' ? 'outline-check' : undefined,
+      this.faVersion === 4 ? 'fa' : 'fas'
     ].filter(x => !!x).join(' ')
   }
 
@@ -102,6 +105,7 @@ export class FaCheck {
     }
 
     this.icon = this.icon || 'fa-check'
+    this.faVersion = globalConfig.faVersion
 
     this.configureIcon()
   }

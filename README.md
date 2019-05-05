@@ -4,12 +4,10 @@ A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons
 This library is a work in progress and has not been published to npm.  Please check back again soon!
 
 ## Compatibility
-At this time, this libary is only compatible with FontAwesome 4.x.x
-
-Compatibility with FontAwesome 5.x.x and other libraries such as aurelia-fontawesome and aurelia/ux is coming soon!
+At this time, this libary is only compatible with FontAwesome 4.x.x and Solid icons in FontAwesome 5.x.x
 
 ## Usage and Configuration
-This plugin uses FontAwesome 4.x.x icon classes.  You'll need to ensure that the classes are bundled with your app
+This plugin uses FontAwesome icon classes.  You'll need to ensure that the classes are bundled with your app
 
 Configure the plugin in your index file
 ```javascript
@@ -78,7 +76,7 @@ When performing the initial configuration in your app's index file you may provi
 ##### faVersion: 4 | 5
 Default value: 4
 
-Specifies the FontAwesome version that you are using.  Currently only 4.x.x is supported
+Specifies the FontAwesome version that you are using.
 
 ##### checkedColor: string
 Default value: black
