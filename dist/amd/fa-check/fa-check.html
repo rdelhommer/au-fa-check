@@ -1,7 +1,7 @@
 <template>
   <require from="./fa-check.css"></require>
 
-  <label class="fa-check-wrap fa-check-wrap-${orientation}" click.delegate="onClick($event)"
+  <label class="fa-check-wrap fa-check-wrap-${orientation}"
          class.bind="labelClasses">
     <i class="fa ${renderedIcon}" class.bind="iconClasses"></i>
     <input class="input-fa-checkbox" type="checkbox" checked.bind="checked" disabled.bind="disabled"

@@ -51,13 +51,6 @@ var FaCheck = /** @class */ (function () {
             ? this.icon
             : this.outlineIcon;
     };
-    FaCheck.prototype.onClick = function (event) {
-        if (this.disabled)
-            return;
-        this.isInputFocused = true;
-        this.checked = !!!this.checked;
-        event.stopPropagation();
-    };
     FaCheck.prototype.checkedChanged = function () {
         if (this.iconType === 'standard')
             return;
@@ -72,8 +65,6 @@ var FaCheck = /** @class */ (function () {
         this.configureIcon();
     };
     FaCheck.prototype.checkedColorChanged = function () {
-        console.log(this.element);
-        console.log(this.instanceConfig);
         themeController.configureTheme(this.element, this.instanceConfig);
     };
     FaCheck.prototype.bind = function () {

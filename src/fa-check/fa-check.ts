@@ -63,13 +63,6 @@ export class FaCheck {
       : this.outlineIcon
   }
 
-  onClick(event: Event) {
-    if (this.disabled) return;
-
-    this.checked = !!!this.checked;
-    event.stopPropagation()
-  }
-
   checkedChanged() {
     if (this.iconType === 'standard') return;
 

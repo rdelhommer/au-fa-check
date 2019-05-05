@@ -43,13 +43,6 @@ let FaCheck = class FaCheck {
             ? this.icon
             : this.outlineIcon;
     }
-    onClick(event) {
-        if (this.disabled)
-            return;
-        this.isInputFocused = true;
-        this.checked = !!!this.checked;
-        event.stopPropagation();
-    }
     checkedChanged() {
         if (this.iconType === 'standard')
             return;
@@ -64,8 +57,6 @@ let FaCheck = class FaCheck {
         this.configureIcon();
     }
     checkedColorChanged() {
-        console.log(this.element);
-        console.log(this.instanceConfig);
         themeController.configureTheme(this.element, this.instanceConfig);
     }
     bind() {

@@ -18,7 +18,6 @@ export declare class FaCheck {
     readonly labelClasses: string;
     readonly iconClasses: string;
     private configureIcon;
-    onClick(event: Event): void;
     checkedChanged(): void;
     iconChanged(): void;
     iconTypeChanged(): void;
