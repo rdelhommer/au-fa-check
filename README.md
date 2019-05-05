@@ -112,7 +112,6 @@ Default value: square
 Specifies the shape of the checkbox outline when a checkbox's iconType === 'standard'
 
 ## TODO
-* fix issue with focus on click
 * material styles - need to figure out a good way to do theming
 * add support for fontawesome libraries like aurelia-fontawesome
 * aria attributes - what is needed for this? maybe just labeled by?
