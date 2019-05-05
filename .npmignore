@@ -3,3 +3,4 @@ src
 .npmignore
 tsconfig.json
 yarn.lock
+docs
