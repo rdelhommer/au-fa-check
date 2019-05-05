@@ -20,7 +20,7 @@ aurelia.use
 Add a checkbox to any template
 ```html
 <template>
-  <au-fa-check></au-fa-check>
+  <au-fa-check>This is the label</au-fa-check>
 </template>
 ```
 
