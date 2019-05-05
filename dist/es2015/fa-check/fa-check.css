@@ -21,7 +21,7 @@ au-fa-check>.fa-check-wrap>.fa {
   padding: 2px;
 }
 
-au-fa-check>.fa-check-wrap>.fa.focused:not(.outline-check) {
+au-fa-check>.fa-check-wrap>.fa.focused {
   box-shadow: 0px 0px 2px 2px dodgerblue;
 }
 

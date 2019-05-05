@@ -114,4 +114,3 @@ Specifies the shape of the checkbox outline when a checkbox's iconType === 'stan
 ## TODO
 * material styles - need to figure out a good way to do theming
 * add support for fontawesome libraries like aurelia-fontawesome
-* outline iconType focus styles
