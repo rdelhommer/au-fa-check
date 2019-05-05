@@ -1,9 +1,12 @@
-import { bindable, customElement, computedFrom } from "aurelia-framework";
+import { bindable, customElement, computedFrom, inject } from "aurelia-framework";
 import { globalConfig, FaCheckSize, FaCheckShape, FaCheckIconType, FaCheckOrientation } from "./fa-check-config";
 import { themeController } from "../utils/theme-controller";
+import { IFaCheckConfig } from "..";
 
+@inject(Element)
 @customElement('au-fa-check')
 export class FaCheck {
+  private instanceConfig: IFaCheckConfig
   private outlineIcon: string
   private faVersion: number
 
@@ -18,6 +21,8 @@ export class FaCheck {
   @bindable size: FaCheckSize
   @bindable shape: FaCheckShape
   @bindable iconType: FaCheckIconType
+
+  constructor(private element: HTMLElement) { }
 
   @computedFrom('disabled')
   get labelClasses() {
@@ -83,23 +88,32 @@ export class FaCheck {
   }
 
   checkedColorChanged() {
-    themeController.configureTheme()
+    console.log(this.element);
+    console.log(this.instanceConfig);
+    themeController.configureTheme(this.element, this.instanceConfig)
   }
 
   bind() {
-    this.orientation = this.orientation || 'horizontal'
-    this.checkedColor = this.checkedColor || globalConfig.checkedColor
-    this.size = this.size || globalConfig.size
-    this.shape = this.shape || globalConfig.shape
-    this.iconType = this.iconType || 'standard'
+    this.orientation = this.orientation ? this.orientation : 'horizontal'
+    this.checkedColor = this.checkedColor ? this.checkedColor : globalConfig.checkedColor
+    this.size = this.size ? this.size : globalConfig.size
+    this.shape = this.shape ? this.shape : globalConfig.shape
+    this.iconType = this.iconType ? this.iconType : 'standard'
 
     if (this.iconType === 'outline' && !this.icon) {
       throw 'You must specify an icon when using outline checkboxes'
     }
 
-    this.icon = this.icon || 'fa-check'
+    this.icon = this.icon ? this.icon : 'fa-check'
     this.faVersion = globalConfig.faVersion
 
+    this.instanceConfig = Object.assign({}, globalConfig, { 
+      checkedColor: this.checkedColor,
+      size: this.size,
+      shape: this.shape
+    })
+
     this.configureIcon()
+    this.checkedColorChanged()
   }
 }
