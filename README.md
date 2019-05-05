@@ -1,7 +1,5 @@
-# au-fa-check - WORK IN PROGRESS
+# au-fa-check
 A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons
-
-This library is a work in progress and has not been published to npm.  Please check back again soon!
 
 ## Compatibility
 At this time, this libary is only compatible with FontAwesome 4.x.x and Solid icons in FontAwesome 5.x.x
@@ -9,12 +7,19 @@ At this time, this libary is only compatible with FontAwesome 4.x.x and Solid ic
 ## Usage and Configuration
 This plugin uses FontAwesome icon classes.  You'll need to ensure that the classes are bundled with your app
 
-Configure the plugin in your index file
+### Install the plugin
+```
+npm install au-fa-check --save
+```
+
+### Configure the plugin
+Add the following to your index file
 ```javascript
 aurelia.use
   .plugin(PLATFORM.moduleName('au-fa-check'), { /* configuration object */})
 ```
 
+### Use the plugin 
 Add a checkbox to any template
 ```html
 <template>
@@ -66,6 +71,7 @@ When standard, the value of the icon property is placed inside the checkbox outl
 TODO: Add image and code
 
 When outline, the value of the icon property is rendered as the checkbox when it is checked and its "*-o" version is rendered as the checkbox when it is unchecked
+**NOTE** This option is only available when using FontAwesome 4.x.x
 
 TODO: Add image and code
 
@@ -97,3 +103,10 @@ Specifies the default size of a checkbox relative to its label
 Default value: square
 
 Specifies the shape of the checkbox outline when a checkbox's iconType === 'standard'
+
+## TODO
+* fix issue with focus on click
+* material styles - need to figure out a good way to do theming
+* add support for fontawesome libraries like aurelia-fontawesome
+* aria attributes - what is needed for this? maybe just labeled by?
+* outline iconType focus styles
