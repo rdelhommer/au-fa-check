@@ -1,5 +1,5 @@
 import { FrameworkConfiguration, PLATFORM } from 'aurelia-framework';
-import { IFaCheckConfig, globalConfig } from './fa-check/fa-check-config';
+import { IFaCheckConfig, globalConfig, FaCheckSize, FaCheckOrientation, FaCheckIconType, FaCheckShape, FaCheckTheme } from './fa-check/fa-check-config';
 
 export function configure(aurelia: FrameworkConfiguration, config: IFaCheckConfig) {
   aurelia.globalResources([
@@ -12,5 +12,10 @@ export function configure(aurelia: FrameworkConfiguration, config: IFaCheckConfi
 }
 
 export {
-  IFaCheckConfig
+  IFaCheckConfig,
+  FaCheckSize,
+  FaCheckTheme,
+  FaCheckShape,
+  FaCheckIconType,
+  FaCheckOrientation
 }
