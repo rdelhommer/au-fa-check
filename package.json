@@ -1,6 +1,6 @@
 {
   "name": "au-fa-check",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": " A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons ",
   "keywords": [
     "aurelia",
