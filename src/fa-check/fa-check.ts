@@ -27,23 +27,33 @@ export class FaCheck {
   @computedFrom('disabled')
   get labelClasses() {
     return [
-      this.disabled ? 'disabled' : undefined,
+      this.disabled ? 'au-fa-check__label--disabled' : undefined,
     ].filter(x => !!x).join(' ')
   }
 
   @computedFrom('size', 'disabled', 'checked', 'isInputFocused', 'iconType')
   get iconClasses() {
     return [
-      this.size,
-      this.disabled ? 'disabled' : undefined,
-      this.checked ? 'checked' : 'unchecked',
-      this.isInputFocused ? 'focused' : undefined,
+      this.size === 'standard' 
+        ? 'au-fa-check__box--medium' 
+        : 'au-fa-check__box--big',
+      this.disabled 
+        ? 'au-fa-check__box--disabled' 
+        : undefined,
+      this.checked 
+        ? 'au-fa-check__box--checked' 
+        : 'au-fa-check__box--unchecked',
+      this.isInputFocused 
+        ? 'au-fa-check__box--focused' 
+        : undefined,
       this.shape === 'square' 
-        ? 'square-check' 
+        ? 'au-fa-check__box--square' 
         : this.shape === 'circle'
-          ? 'circle-check'
+          ? 'au-fa-check__box--circle'
           : undefined,
-      this.iconType === 'outline' ? 'outline-check' : undefined,
+      this.iconType === 'outline' 
+        ? 'au-fa-check__box--outline-icon' 
+        : undefined,
       this.faVersion === 4 ? 'fa' : 'fas'
     ].filter(x => !!x).join(' ')
   }

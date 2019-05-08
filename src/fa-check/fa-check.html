@@ -1,10 +1,10 @@
-<template>
+<template class="au-fa-check">
   <require from="./fa-check.css"></require>
 
-  <label class="fa-check-wrap fa-check-wrap-${orientation}"
+  <label class="au-fa-check__label au-fa-check__label--${orientation} fa-check-wrap-${orientation}"
          class.bind="labelClasses">
-    <i class="fa ${renderedIcon}" class.bind="iconClasses"></i>
-    <input class="input-fa-checkbox" type="checkbox" checked.bind="checked" disabled.bind="disabled"
+    <i class="au-fa-check__box ${renderedIcon}" class.bind="iconClasses"></i>
+    <input class="au-fa-check__input" type="checkbox" checked.bind="checked" disabled.bind="disabled"
             focus.bind="isInputFocused">
     <slot><!-- label --></slot>
   </label>
