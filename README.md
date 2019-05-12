@@ -6,7 +6,7 @@ A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons.
 At this time, this libary is only compatible with FontAwesome 4.x.x and Solid icons in FontAwesome 5.x.x
 
 ## Installation and Usage
-This plugin uses FontAwesome icon classes.  You'll need to ensure that the classes are bundled with your app
+This plugin uses FontAwesome font icons.  You'll need to ensure that the css classes are bundled with your app
 
 ### Install the plugin
 ```
