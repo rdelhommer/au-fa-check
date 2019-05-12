@@ -5,7 +5,7 @@ A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons.
 ## Compatibility
 At this time, this libary is only compatible with FontAwesome 4.x.x and Solid icons in FontAwesome 5.x.x
 
-## Usage and Configuration
+## Installation and Usage
 This plugin uses FontAwesome icon classes.  You'll need to ensure that the classes are bundled with your app
 
 ### Install the plugin
@@ -27,7 +27,7 @@ Add a checkbox to any template
   <au-fa-check>This is the label</au-fa-check>
 </template>
 ```
-
+## Configuration
 ### Bindings
 #### checked: boolean
 Exposes the checked state of the input
