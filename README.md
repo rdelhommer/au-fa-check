@@ -3,7 +3,7 @@ A checkbox for the Aurelia Framework that uses FontAwesome for checkbox icons.
 ![overview](https://github.com/rdelhommer/au-fa-check/blob/master/docs/images/overview.png)
 
 ## Compatibility
-At this time, this libary is only compatible with FontAwesome 4.x.x and Solid icons in FontAwesome 5.x.x
+At this time, this libary is only compatible with font icons in FontAwesome 4.x.x and Solid font icons in FontAwesome 5.x.x.  We hope to support SVG icons in the future
 
 ## Installation and Usage
 This plugin uses FontAwesome font icons.  You'll need to ensure that the css classes are bundled with your app
